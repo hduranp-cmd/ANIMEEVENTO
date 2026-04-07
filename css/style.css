@@ -1,0 +1,280 @@
+/* =========================================
+   TIPOGRAFÍA Y RESETEO BASE
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REGLA MAESTRA PARA IMÁGENES */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2D0A31;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================= */
+header {
+    background-color: #2D0A31;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    color: #FFFFFF;
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #FFEB3B;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFEB3B;
+}
+
+/* =========================================
+   SECCIÓN PRINCIPAL (HERO)
+   ========================================= */
+#hero {
+    background-color: #2D0A31;
+    background-image: linear-gradient(rgba(45, 10, 49, 0.8), rgba(45, 10, 49, 0.8)), url('../images/banner-placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#hero h1 {
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFEB3B;
+}
+
+/* Botones */
+.btn-principal, .btn-destacado {
+    display: inline-block;
+    background-color: #E91E63;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-principal:hover, .btn-destacado:hover {
+    background-color: #FFEB3B;
+    color: #2D0A31;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   ESTILOS GENERALES DE SECCIONES
+   ========================================= */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #E91E63;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Fondos intercalados */
+#actividades, #cronograma {
+    background-color: #F5F5F5;
+    max-width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* =========================================
+   CUADRÍCULAS Y TARJETAS
+   ========================================= */
+.actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.actividades-grid article, .espacio {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 4px solid #E91E63;
+    transition: 0.3s ease;
+}
+
+.actividades-grid article:hover, .espacio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* --- ESTA ES LA PARTE CORREGIDA --- */
+.actividades-grid article img, 
+.espacio img {
+    width: 100%; /* Toma todo el ancho disponible */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-height: 250px; /* Evita que una imagen sea exageradamente gigante */
+    object-fit: contain; /* Asegura que la imagen se vea COMPLETA sin recortes */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+#espacios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.espacio ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.espacio ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================================
+   UBICACIÓN Y MAPA
+   ========================================= */
+.mapa-container {
+    background-color: #ddd;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mapa-container img {
+    width: 100%;
+    height: auto; /* Añadido por seguridad para que el mapa no se estire */
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   REGISTRO
+   ========================================= */
+#registro {
+    text-align: center;
+    background-color: #2D0A31;
+    color: #FFFFFF;
+    max-width: 100%;
+}
+
+#registro h2 {
+    color: #FFFFFF;
+}
+
+#registro p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   PIE DE PÁGINA (Footer)
+   ========================================= */
+footer {
+    background-color: #1A051D;
+    color: #FFFFFF;
+    padding: 3rem 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+footer h3 {
+    color: #FFEB3B;
+    font-size: 1.2rem;
+}
+
+.derechos {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    color: #aaa;
+}
